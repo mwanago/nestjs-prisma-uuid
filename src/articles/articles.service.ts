@@ -36,15 +36,25 @@ export class ArticlesService {
   }
 
   async update(id: string, article: UpdateArticleDto) {
-    return this.prismaService.article.update({
-      data: {
-        ...article,
-        id: undefined,
-      },
-      where: {
-        id,
-      },
-    });
+    try {
+      return await this.prismaService.article.update({
+        data: {
+          ...article,
+          id: undefined,
+        },
+        where: {
+          id,
+        },
+      });
+    } catch (error) {
+      if (
+        error instanceof Prisma.PrismaClientKnownRequestError &&
+        error.code === PrismaError.RecordDoesNotExist
+      ) {
+        throw new ArticleNotFoundException(id);
+      }
+      throw error;
+    }
   }
 
   async delete(id: string) {
