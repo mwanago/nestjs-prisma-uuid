@@ -1,5 +1,5 @@
 export enum PrismaError {
-  RecordDoesNotExist = "P2025",
-  UniqueConstraintViolated = "P2002",
-  ForeignKeyConstraintViolated = "P2003",
+  RecordDoesNotExist = 'P2025',
+  UniqueConstraintViolated = 'P2002',
+  ForeignKeyConstraintViolated = 'P2003',
 }

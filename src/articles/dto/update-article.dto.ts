@@ -1,5 +1,5 @@
-import { IsString, IsNotEmpty, IsOptional } from "class-validator";
-import { CanBeUndefined } from "../../utilities/can-be-undefined";
+import { IsString, IsNotEmpty, IsOptional } from 'class-validator';
+import { CanBeUndefined } from '../../utilities/can-be-undefined';
 
 export class UpdateArticleDto {
   @IsString()

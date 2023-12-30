@@ -1,10 +1,10 @@
-import { Injectable } from "@nestjs/common";
-import { PrismaService } from "../database/prisma.service";
-import { CreateArticleDto } from "./dto/create-article.dto";
-import { Prisma } from "@prisma/client";
-import { PrismaError } from "../database/prisma-error.enum";
-import { ArticleNotFoundException } from "./article-not-found.exception";
-import { UpdateArticleDto } from "./dto/update-article.dto";
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from '../database/prisma.service';
+import { CreateArticleDto } from './dto/create-article.dto';
+import { Prisma } from '@prisma/client';
+import { PrismaError } from '../database/prisma-error.enum';
+import { ArticleNotFoundException } from './article-not-found.exception';
+import { UpdateArticleDto } from './dto/update-article.dto';
 
 @Injectable()
 export class ArticlesService {
